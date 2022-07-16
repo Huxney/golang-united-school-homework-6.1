@@ -47,7 +47,7 @@ func (b *box) ExtractByIndex(i int) (Shape, error) {
 	if !ok {
 		return resultShape, errors.New("shape by index doesn't exist")
 	} else {
-		b.shapes = append(b.shapes[i:], b.shapes[:i+1]...)
+		b.shapes = append(b.shapes[:i], b.shapes[i+1:]...)
 		return resultShape, nil
 	}
 }
